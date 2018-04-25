@@ -39,31 +39,51 @@
         ],
         "configuration": {
             "title": "Open file From Path",
-            "properties": {
-                "open-file-from-path.startingPath": {
-                    "type": "string",
-                    "default": "/",
-                    "description": "Starting path."
-                },
-                "open-file-from-path.searchExclusion": {
-                    "type": "array",
-                    "default": [
-                        "**/node_modules/**",
-                        "**/.vscode/**"
-                    ],
-                    "description": "Global search exclusion (global patterns)"
-                },
-                "open-file-from-path.regExp": {
-                    "type": "string",
-                    "default": "['|\"]([^'|\"]+)['|\"]",
-                    "description": "Custom matching regExp to detect the file (default between quotes of double quotes)"
-                },
-                "open-file-from-path.matchFileName": {
-                    "type": "boolean",
-                    "default": false,
-                    "description": "Choose to search and match the pure filename or the entire path"
-                }
-            }
+			"properties": {
+				"open-file-from-path.startingPath": {
+					"type": "string",
+					"default": "/",
+					"description": "Starting path."
+				},
+				"open-file-from-path.searchExclusion": {
+					"type": "array",
+					"default": [
+						"**/node_modules/**",
+						"**/.vscode/**"
+					],
+					"description": "Global search exclusion (global patterns)"
+				},
+				"open-file-from-path.regExp": {
+					"type": "string",
+					"default": "['|\"]([^'|\"]+)['|\"]",
+					"description": "Custom matching regExp to detect the file (default between quotes of double quotes)"
+				},
+				"open-file-from-path.unquotedRegExp": {
+					"type": "string",
+					"default": "([\\w|\\.|\\-]+)",					
+					"description": "Custom matching regExp to detect the unquoted file (defaul words with dots and -). "
+				},
+				"open-file-from-path.matchFileName": {
+					"type": "boolean",
+					"default": false,
+					"description": "Choose to search and match the pure filename or the entire path"
+				},
+				"open-file-from-path.defaultsToCurrentFile": {
+					"type": "boolean",
+					"default": true,
+					"description": "Use current file name (without extension) if no word is at the cursor location. Otherwise show error."
+				},
+				"open-file-from-path.useInternalQuickOpen": {
+					"type": "boolean",
+					"default": true,
+					"description": "Use internal command quickOpen (Ctrl-P) instead of custom file search in workspace."
+				},
+				"open-file-from-path.useSelection": {
+					"type": "boolean",
+					"default": true,
+					"description": "Use text selection to look for instead of a word at cursor position."
+				}
+			}
         }
     },
     "scripts": {
